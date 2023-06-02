@@ -23,6 +23,11 @@ function changeColor(elementId){
     textElement.style.color = '#6BB4FD';
     textElement.style.backgroundColor = '#F6FBFF';
   } 
+    else if (currentColor === 'rgb(107, 180, 253)') {
+    textElement.style.color = '#6BB4FD';
+    textElement.style.backgroundColor = '#F6FBFF';
+
+  }
   else {
     textElement.style.color = '#333333';
     textElement.style.backgroundColor = '#FFFFFF';
