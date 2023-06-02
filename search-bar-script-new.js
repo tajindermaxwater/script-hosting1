@@ -14,3 +14,17 @@ function searchFAQs() {
             }
         }
     }
+function changeColor(elementId){
+    
+  var textElement = document.getElementById(elementId);   
+  var currentColor = textElement.style.color;
+  console.log(currentColor);
+  if (currentColor === 'rgb(51, 51, 51)') {
+    textElement.style.color = '#6BB4FD';
+    textElement.style.backgroundColor = '#F6FBFF';
+  } 
+  else {
+    textElement.style.color = '#333333';
+    textElement.style.backgroundColor = '#FFFFFF';
+  }
+}
