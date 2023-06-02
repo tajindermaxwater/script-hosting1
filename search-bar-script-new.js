@@ -33,3 +33,28 @@ function changeColor(elementId){
     textElement.style.backgroundColor = '#FFFFFF';
   }
 }
+
+function openaccordion(){
+    var accordionElement = document.querySelector('#changeColorAccordion10');
+    accordionElement.click();
+
+}
+
+    function filterQuestions(keyword) {
+    var accordionItems = document.getElementsByClassName('accordion-item');
+
+    // Loop through all accordion items
+    for (var i = 0; i < accordionItems.length; i++) {
+        var question = accordionItems[i].querySelector('h3.accordion-button');
+        var questionText = question.textContent;
+
+        // Check if the question contains the keyword
+        if (questionText.includes(keyword)) {
+            // Show the matching question
+            accordionItems[i].style.display = 'block';
+        } else {
+            // Hide non-matching questions
+            accordionItems[i].style.display = 'none';
+        }
+    }
+}
