@@ -2,19 +2,27 @@ function searchFAQs() {
         var input = document.getElementById('search-input');
         var filter = input.value.toUpperCase();
         var faqList = document.getElementById('faq-list');
-        var items = faqList.getElementsByClassName('accordion-item'); // Change 'questions' to 'items'
+        var items = faqList.getElementsByClassName('accordion-item');
 
-        for (var i = 0; i < items.length; i++) { // Change 'questions.length' to 'items.length'
-            var item = items[i]; // Change 'question' to 'item'
-            var content = item.querySelector('.accordion-body'); // Get the accordion body within the item
-            var txtValue = content.innerText || content.textContent; // Use the content instead of the question
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                item.style.display = ''; // Update the style of the item
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var button = item.querySelector('.accordion-button'); // Get the accordion button within the item
+            var body = item.querySelector('.accordion-body'); // Get the accordion body within the item
+
+            var buttonTxtValue = button.innerText || button.textContent;
+            var bodyTxtValue = body.innerText || body.textContent;
+
+            if (
+                buttonTxtValue.toUpperCase().indexOf(filter) > -1 ||
+                bodyTxtValue.toUpperCase().indexOf(filter) > -1
+            ) {
+                item.style.display = '';
             } else {
-                item.style.display = 'none'; // Update the style of the item
+                item.style.display = 'none';
             }
         }
     }
+
 
 function changeColor(elementId){
     
