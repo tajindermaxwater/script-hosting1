@@ -2,18 +2,20 @@ function searchFAQs() {
         var input = document.getElementById('search-input');
         var filter = input.value.toUpperCase();
         var faqList = document.getElementById('faq-list');
-        var questions = faqList.getElementsByClassName('accordion-button');
+        var items = faqList.getElementsByClassName('accordion-item'); // Change 'questions' to 'items'
 
-        for (var i = 0; i < questions.length; i++) {
-            var question = questions[i];
-            var txtValue = question.innerText || question.textContent;
+        for (var i = 0; i < items.length; i++) { // Change 'questions.length' to 'items.length'
+            var item = items[i]; // Change 'question' to 'item'
+            var content = item.querySelector('.accordion-body'); // Get the accordion body within the item
+            var txtValue = content.innerText || content.textContent; // Use the content instead of the question
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                question.closest('.accordion-item').style.display = '';
+                item.style.display = ''; // Update the style of the item
             } else {
-                question.closest('.accordion-item').style.display = 'none';
+                item.style.display = 'none'; // Update the style of the item
             }
         }
     }
+
 function changeColor(elementId){
     
   var textElement = document.getElementById(elementId);   
