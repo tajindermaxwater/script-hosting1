@@ -1,9 +1,9 @@
 function searchFAQs() {
-        document.getElementById('category_header').style.display='None';
-        document.getElementById('category_header1').style.display='None';
-        document.getElementById('category_header2').style.display='None';
-        document.getElementById('category_header3').style.display='None';
-        document.getElementById('category_header4').style.display='None';
+        document.getElementById('category_header').style.display='none';
+        document.getElementById('category_header1').style.display='none';
+        document.getElementById('category_header2').style.display='none';
+        document.getElementById('category_header3').style.display='none';
+        document.getElementById('category_header4').style.display='none';
         var input = document.getElementById('search-input');
         var filter = input.value.toUpperCase();
         var faqList = document.getElementById('faq-list');
