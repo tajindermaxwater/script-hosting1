@@ -55,16 +55,25 @@ function openaccordion(){
 
 }
 
-    function filterQuestions(keyword) {
+function filterQuestions(keyword) {
+    document.getElementById('category_header').style.display = 'none';
+    document.getElementById('category_header1').style.display = 'none';
+    document.getElementById('category_header2').style.display = 'none';
+    document.getElementById('category_header3').style.display = 'none';
+    document.getElementById('category_header4').style.display = 'none';
+
     var accordionItems = document.getElementsByClassName('accordion-item');
 
     // Loop through all accordion items
     for (var i = 0; i < accordionItems.length; i++) {
         var question = accordionItems[i].querySelector('h3.accordion-button');
-        var questionText = question.textContent;
+        var questionText = question.textContent.toLowerCase(); // Convert to lowercase
+
+        // Convert keyword to lowercase
+        var keywordLowerCase = keyword.toLowerCase();
 
         // Check if the question contains the keyword
-        if (questionText.includes(keyword)) {
+        if (questionText.includes(keywordLowerCase)) {
             // Show the matching question
             accordionItems[i].style.display = 'block';
         } else {
